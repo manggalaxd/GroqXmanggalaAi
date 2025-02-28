@@ -1,0 +1,152 @@
+#root {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body {
+  background-color: #4a4a4a;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+/* Chat bubble styles */
+.chat-bubble {
+  position: relative;
+  padding: 12px 16px;
+  border-radius: 18px;
+  max-width: 80%;
+  word-wrap: break-word;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.chat-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #4f46e5;
+  border-bottom: 0;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+
+/* Input field enhancements */
+.chat-input {
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chat-input:focus {
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Message container */
+.message-container {
+  scroll-behavior: smooth;
+  overflow-anchor: none;
+}
+
+/* Typing indicator */
+.typing-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: typing 1.2s infinite ease-in-out;
+}
+
+.typing-indicator:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
